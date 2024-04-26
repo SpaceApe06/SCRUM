@@ -3,7 +3,7 @@
     <head>
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <title>Wolfenstein</title>
+        <title>Wolfenstein turnering</title>
         <meta name="description" content="">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <link rel="stylesheet" href="style.css">
@@ -11,7 +11,7 @@
     <body>
         <div>
             <div id="logg_in_container">  
-                <h1>Wolfensten LAN Pålogging</h1>
+                <h1>Wolfensten turnering Pålogging</h1>
                 <h1 id="logg_in_Title">Logg inn</h1>
                 <div id="logg_in">
                     <form method="post" action="log_in.php">

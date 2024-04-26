@@ -46,7 +46,7 @@ if(mysqli_num_rows($result) === 1) {
         $_SESSION['epost'] = $row['epost'];
         $_SESSION['userID'] = $row['userID'];
         $_SESSION['admin'] = $row['admin'];
-        header("Location: ticket.php");
+        header("Location: tournament.php");
         
         exit();
     }
