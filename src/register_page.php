@@ -27,7 +27,7 @@
                         <label for="confirm_password">Confirm Password:</label>
                         <input type="password" name="confirm_password" required>
                     </div>
-                    <button type="submit" id="loginButton" >Register</button>
+                    <button type="submit" id="Login_button" >Register</button>
                     <p>Already have an account? <a href="index.php">Login here</a></p>
                 </form>
             </div>

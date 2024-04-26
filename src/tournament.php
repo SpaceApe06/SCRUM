@@ -56,6 +56,7 @@ if(isset($_SESSION['notParticipating'])) {
         <link rel="stylesheet" href="style.css">
     </head>
 <body>
+    <div id="Tournament_container">
     <h1>Wolfenstein LAN Party</h1>
     <?php
     // Check if user is admin
@@ -70,18 +71,22 @@ if(isset($_SESSION['notParticipating'])) {
         // User is admin, show all users who are participating
         $query = "SELECT username FROM users WHERE enter = 1";
         $result = $conn->query($query);
-        echo "Users participating in the LAN party:<br>";
+        echo "<div id='Participants_container'>";
+        echo"<p id=participant> Users participating in the LAN party: </p> <br>";
         while($row = $result->fetch_assoc()) {
-            echo $row['username'] . " is participating.<br>";
+            echo $row ['username'] . " is participating.<br>";
         }
+        echo "</div>";
     }
     ?>
     <p>Join the LAN party by clicking the button below.</p>
+    <div>
     <form method="post">
-        <input type="submit" name="join" value="Join LAN Party">
-        <input type="submit" name="leave" value="Leave LAN Party">
+        <input id="Join" type="submit" name="join" value="Join LAN Party">
+        <input id="Leave" type="submit" name="leave" value="Leave LAN Party">
     </form>
+    </div>
     <p> Download Wolfenstein enemy territory here: <a href="download.php">Download</a></p>
-    <a id="logOut" href="log_out.php">Log Out</a>       
+    <a id="Log_out" href="log_out.php">Log Out</a>       
 </body>
 </html>

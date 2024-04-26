@@ -18,13 +18,13 @@
                     <label for="username">Name:</label>
                     <input type="text" id="username" name="username" placeholder="Name" maxlength="20"><br><br>
 
-                    <label for="epost">skriv Epost</label>
+                    <label for="epost">Epost:</label>
                     <input type="text" id="epost" name="epost" placeholder="Epost" maxlength="20"><br><br>
 
                     <label for="password">Password:</label>
                     <input type="password" id="password" name="password" placeholder="Password" maxlength="20"><br><br>
 
-                    <button id="loginButton" type="submit" >Login</button><br/>
+                    <button id="Login_button" type="submit" >Login</button><br/>
                     <a href="register_page.php">Don't have an account? Sign Up</a>
                 </form>
             </div>
