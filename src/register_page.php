@@ -1,13 +1,13 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <title>Register</title>
+        <title>Wolfenstein Register</title>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link rel="stylesheet" type="text/css" href="style.css">
     </head>
     <body>
-        <div class="Logg_inn_container"> 
+        <div id="Logg_in_container"> 
             <h2>Register</h2>
             <div id="Logg_inn">
                 <form action="register.php" method="post">
@@ -28,9 +28,9 @@
                         <input type="password" name="confirm_password" required>
                     </div>
                     <button type="submit" id="loginButton" >Register</button>
+                    <p>Already have an account? <a href="index.php">Login here</a></p>
                 </form>
             </div>
-            <p>Already have an account? <a href="index.php">Login here</a></p>
         </div>
     </body>
 </html>
