@@ -23,7 +23,7 @@
                         <input type="text" id="epost" name="epost" placeholder="Epost" maxlength="20"><br><br>
 
                         <label for="password">Password:</label>
-                        <input type="password" id="password" name="password" placeholder="Passqord" maxlength="20"><br><br>
+                        <input type="password" id="password" name="password" placeholder="Password" maxlength="20"><br><br>
 
                         <a href="register_page.php">Don't have an account? Sign Up</a>
                         <button id="loginButton" type="submit" >Login</button><br/>

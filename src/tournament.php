@@ -31,22 +31,6 @@ if($_SERVER['REQUEST_METHOD'] == 'POST') {
     }
 }
 
-// Check if user is admin
-$query = "SELECT admin FROM users WHERE userID = ?";
-$stmt = $conn->prepare($query);
-$stmt->bind_param("i", $_SESSION['userID']);
-$stmt->execute();
-$result = $stmt->get_result();
-$user = $result->fetch_assoc();
-
-if($user['admin']) {
-    // User is admin, show all users who are participating
-    $query = "SELECT username FROM users WHERE enter = 1";
-    $result = $conn->query($query);
-    while($row = $result->fetch_assoc()) {
-        echo $row['username'] . " is participating.<br>";
-    }
-}
 
 // Check if user is participating
 if(isset($_SESSION['participating'])) {
@@ -61,8 +45,43 @@ if(isset($_SESSION['notParticipating'])) {
     unset($_SESSION['notParticipating']);
 }
 ?>
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title>Wolfenstein LAN</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="style.css">
+    </head>
+<body>
+    <h1>Wolfenstein LAN Party</h1>
+    <?php
+    // Check if user is admin
+    $query = "SELECT admin FROM users WHERE userID = ?";
+    $stmt = $conn->prepare($query);
+    $stmt->bind_param("i", $_SESSION['userID']);
+    $stmt->execute();
+    $result = $stmt->get_result();
+    $user = $result->fetch_assoc();
 
-<form method="post">
-    <input type="submit" name="join" value="Join LAN Party">
-    <input type="submit" name="leave" value="Leave LAN Party">
-</form>
+    if($user['admin'] == 1) {
+        // User is admin, show all users who are participating
+        $query = "SELECT username FROM users WHERE enter = 1";
+        $result = $conn->query($query);
+        echo "Users participating in the LAN party:<br>";
+        while($row = $result->fetch_assoc()) {
+            echo $row['username'] . " is participating.<br>";
+        }
+    }
+    ?>
+    <p>Join the LAN party by clicking the button below.</p>
+    <form method="post">
+        <input type="submit" name="join" value="Join LAN Party">
+        <input type="submit" name="leave" value="Leave LAN Party">
+    </form>
+    <p> Download Wolfenstein enemy territory here: <a href="download.php">Download</a></p>
+    <a id="logOut" href="log_out.php">Log Out</a>       
+</body>
+</html>
