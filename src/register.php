@@ -8,16 +8,16 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $password = $_POST["password"];
     $confirm_password = $_POST["confirm_password"];
 
-    // Validate input
+    // sjekker om passordene er like
     if ($password !== $confirm_password) {
         echo "Passwords do not match";
         exit();
     }
 
-    // Hash the password before storing it in the database
+    // Hasher passordene før det blir lagret i database
     $hashed_password = hash("sha256", $password);
 
-    // Insert user data into the database
+    // legger til data i database
     $query = "INSERT INTO users (username, password) VALUES ('$username', '$hashed_password')";
     $result = mysqli_query($conn, $query);
 

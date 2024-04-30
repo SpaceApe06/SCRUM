@@ -9,6 +9,7 @@
         <link rel="stylesheet" href="style.css">
     </head>
     <body>
+        <!-- hvis bruker eksister kan den skrive brukernavn og passord for å logge seg -->
         <div id="Logg_in_container">  
             <h1>Wolfensten LAN turnering</h1>
             <h1 id="logg_in_Title">Logg inn</h1>
@@ -22,15 +23,12 @@
                     <label for="password">Password:</label>
                     <input type="password" id="password" name="password" placeholder="Password" maxlength="20"><br><br>
                 </div>
+                <!-- hvis brukeren eksisterer går den til påmelding siden, hvis ikke er det en link til å registrere seg -->
                     <button id="Login_button" type="submit" >Login</button><br/>
                     <a href="register_page.php">Don't have an account? Sign Up</a>
                 </form>
             </div>
         </div>
-        <!--[if lt IE 7]>
-            <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="#">upgrade your browser</a> to improve your experience.</p>
-        <![endif]-->
-        
         <script src="" async defer></script>
     </body>
 </html>

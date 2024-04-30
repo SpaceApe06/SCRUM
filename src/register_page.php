@@ -7,6 +7,7 @@
         <link rel="stylesheet" type="text/css" href="style.css">
     </head>
     <body>
+        <!-- mottar brukernavn, brukernavn og passord-->
         <div id="Logg_in_container"> 
             <h2>Register</h2>
             <div id="Logg_inn">
@@ -23,6 +24,7 @@
                         <label for="confirm_password">Confirm Password:</label>
                         <input type="password" name="confirm_password" required>
                     </div>
+                    <!-- når knappen er trykket så vil den lagre tingene ovenfor i databasen -->
                     <button type="submit" id="Login_button" >Register</button>
                     <p>Already have an account? <a href="index.php">Login here</a></p>
                 </form>
