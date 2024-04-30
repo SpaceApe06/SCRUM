@@ -5,7 +5,6 @@ include("DB_connect.php");
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $username = $_POST["username"];
-    $epost = $_POST["epost"];
     $password = $_POST["password"];
     $confirm_password = $_POST["confirm_password"];
 
@@ -19,7 +18,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $hashed_password = hash("sha256", $password);
 
     // Insert user data into the database
-    $query = "INSERT INTO users (username, password, email) VALUES ('$username', '$hashed_password', '$epost')";
+    $query = "INSERT INTO users (username, password) VALUES ('$username', '$hashed_password')";
     $result = mysqli_query($conn, $query);
 
     if ($result) {

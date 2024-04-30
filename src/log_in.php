@@ -3,7 +3,7 @@ session_start();
 include "DB_connect.php";
 
 
-if(isset($_POST['username']) && isset($_POST['password']) && ($_POST['epost'])) {
+if(isset($_POST['username']) && isset($_POST['password'])) {
 
     function validate($data) {
         $data = trim($data);
@@ -15,8 +15,6 @@ if(isset($_POST['username']) && isset($_POST['password']) && ($_POST['epost'])) 
 
 $username = validate($_POST['username']);
 $password = validate($_POST['password']);
-$epost = validate($_POST['epost']);
-
 
 if(empty($username)) {
     header ("Location: index.php?error=Username is required!");
@@ -24,9 +22,6 @@ if(empty($username)) {
 }
 else if(empty($password)) {
     header ("Location: index.php?error=Password is required!");
-    exit();
-} else if(empty($epost)) {
-    header ("Location: index.php?error=Epost is required!");
     exit();
 }
 
@@ -40,10 +35,9 @@ $result = mysqli_query($conn, $sql);
 
 if(mysqli_num_rows($result) === 1) {
     $row = mysqli_fetch_assoc($result);
-    if ($row['username'] === $username && $row['password'] === $hashed_password && $row['email']=== $epost) {
+    if ($row['username'] === $username && $row['password'] === $hashed_password) {
         echo "Logged in";
         $_SESSION['username'] = $row['username'];
-        $_SESSION['epost'] = $row['epost'];
         $_SESSION['userID'] = $row['userID'];
         $_SESSION['admin'] = $row['admin'];
         header("Location: tournament.php");
@@ -51,7 +45,7 @@ if(mysqli_num_rows($result) === 1) {
         exit();
     }
     else{
-        header("Location: index.php?error=Something went wrong, check if username, password or email is correct!");    
+        header("Location: index.php?error=Something went wrong, check if username, password is correct!");    
         exit();
     }
 }

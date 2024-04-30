@@ -16,10 +16,6 @@
                         <input type="text" name="username" required>
                     </div>
                     <div id=brukernavnPassord>
-                        <label for="epost">Epost:</label>
-                        <input type="text" name="epost" required>
-                    </div>
-                    <div id=brukernavnPassord>
                         <label for="password">Password:</label>
                         <input type="password" name="password" required>
                     </div>

@@ -1,10 +1,9 @@
 <?php
 // info
-$ftp_server = "172.25.1.101"; // Specifies the FTP server to connect to
-$ftp_user = "ftpuser"; // Specifies the username for the FTP server
-$ftp_pass = "IMKuben1337!"; // Specifies the password for the FTP server
-$file = "path/to/WolfensteinEnemyTerritory.zip";
-
+$ftp_server = "172.25.1.101"; //FTP server addressen
+$ftp_user = "ftpuser"; // Spesifiser brukenavnet til FTP server
+$ftp_pass = "IMKuben1337!"; // Spesifiserer password til FTP server
+$file = "path/to/WolfensteinEnemyTerritory"; //placeholder
 // Set up a connection
 $conn_id = ftp_connect($ftp_server);
 
@@ -17,7 +16,7 @@ if (@ftp_login($conn_id, $ftp_user, $ftp_pass)) {
     $temp = tmpfile();
     if (ftp_fget($conn_id, $temp, basename($file), FTP_BINARY, 0)) {
         // Output the file
-        header("Content-Disposition: attachment; filename=\"" . basename($file) . "\"");
+        header("Content-Disposition: attachment; filename=\"" . basename($file) . "\""); //filnav skal hit
         header("Content-Type: application/octet-stream");
         header("Content-Length: " . filesize($file));
         fpassthru($temp);

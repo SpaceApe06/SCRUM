@@ -14,16 +14,14 @@
             <h1 id="logg_in_Title">Logg inn</h1>
             <div id="logg_in">
                 <form method="post" action="log_in.php">
-
+                <div id=brukernavnPassord>
                     <label for="username">Name:</label>
                     <input type="text" id="username" name="username" placeholder="Name" maxlength="20"><br><br>
-
-                    <label for="epost">Epost:</label>
-                    <input type="text" id="epost" name="epost" placeholder="Epost" maxlength="20"><br><br>
-
+                </div>
+                <div id=brukernavnPassord>
                     <label for="password">Password:</label>
                     <input type="password" id="password" name="password" placeholder="Password" maxlength="20"><br><br>
-
+                </div>
                     <button id="Login_button" type="submit" >Login</button><br/>
                     <a href="register_page.php">Don't have an account? Sign Up</a>
                 </form>

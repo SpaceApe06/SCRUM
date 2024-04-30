@@ -2,13 +2,13 @@
 session_start();
 include("DB_connect.php");
 
-// Check if user is logged in
+// sjekker om brukker er logget inn
 if(!isset($_SESSION['userID'])) {
     echo "You must be logged in to join the LAN party.";
     exit;
 }
 
-// Check if form is submitted
+// sjekker hvis form er submitted
 if($_SERVER['REQUEST_METHOD'] == 'POST') {
     if(isset($_POST['join'])) {
         // User wants to join the LAN party
@@ -17,10 +17,10 @@ if($_SERVER['REQUEST_METHOD'] == 'POST') {
         $stmt->bind_param("i", $_SESSION['userID']);
         $stmt->execute();
 
-         // Set a session variable to show that the user is participating
+         // Set session variable til vise at user er påmeldt
          $_SESSION['participating'] = true;
         } elseif(isset($_POST['leave'])) {
-            // User wants to leave the LAN party
+            // bruker ønsker å forlatte LAN party
             $query = "UPDATE users SET enter = 0 WHERE userID = ?";
             $stmt = $conn->prepare($query);
             $stmt->bind_param("i", $_SESSION['userID']);
