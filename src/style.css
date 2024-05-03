@@ -1,77 +1,202 @@
-body{
-    font-family: Arial, Helvetica, sans-serif;
-}
-#Logg_in_container{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
-    background-color: #f1f1f1;
-    border: 2px solid #000;
-    border-radius: 10px;
-}
-#Tournament_container{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
-    background-color: #f1f1f1;
-    border: 2px solid #000;
-    border-radius: 10px;
-}
-#Participants_container{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
-    background-color: lightblue;
-    border: 2px solid #000;
-    padding-left: 4%;
-    padding-right: 4%;
-    padding-top: 1%;
-    padding-bottom: 1%;
-}
-#participant{
+body {
     background-color: white;
-    border: 2px solid #000;
+    margin: 0;
+    padding: 0;
+    font-family: Arial, Helvetica, sans-serif;
+    display: flex; /* Set display to flex */
+    justify-content: center; /* Center horizontally */
+    align-items: center; /* Center vertically */
+    min-height: 100vh; /* Ensure full viewport height */
 }
-#Login_button{
+
+#login_title{
+    justify-self: center;
+}
+
+#header {
+    background-color: black;
+    color: white;
+    text-align: center;
+    padding: 10px;
+    margin-bottom: 20px;
+    width: 100%; /* Extend header to full width */
+}
+
+#content {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+form {
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    width: 300px;
+    margin-top: 20px;
+}
+
+label {
+    display: block;
+    margin-bottom: 10px;
+    color: black;
+}
+
+input[type="text"],
+input[type="password"] {
+    width: calc(100% - 20px);
+    padding: 10px;
+    margin-bottom: 20px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+button[type="submit"] {
+    background-color: #4CAF50;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+p {
+    text-align: center;
+    margin-top: 20px;
+}
+
+a {
+    color: #4CAF50;
+}
+* 
+
+body {
+    background-color: white;
+    margin: 0;
+    padding: 0;
+    font-family: Arial, Helvetica, sans-serif;
+    display: flex; /* Set display to flex */
+    justify-content: center; /* Center horizontally */
+    align-items: center; /* Center vertically */
+    min-height: 100vh; /* Ensure full viewport height */
+}
+
+#header2 {
+    background-color: black;
+    color: white;
+    padding: 10px;
+
+}
+
+#label{
+    color: black;
+}
+    
+
+#content {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+form {
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    width: 300px;
+    margin-top: 20px;
+}
+
+label {
+    display: block;
+    margin-bottom: 10px;
+    color: black;
+}
+
+input[type="text"],
+input[type="password"] {
+    width: calc(100% - 20px);
+    padding: 10px;
+    margin-bottom: 20px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+button[type="submit"] {
+    background-color: #4CAF50;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+p {
+    text-align: center;
+    margin-top: 20px;
+}
+
+a {
+    color: #4CAF50;
+}
+
+#tournament_container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+#participants_container {
+    background-color: rgb(234, 234, 234);
+    border: 1px solid #ccc;
+    border-radius: 10px; /* Rounded corners */
+    padding: 1% 4%;
+    margin-top: 2%; /* Adjust margin as needed */
+    text-align: center; /* Center text within container */
+}
+
+#participant {
+    background-color:rgb(208, 208, 208);
+    border: 1px solid #ccc;
+    border-radius: 5px; /* Rounded corners */
+    margin-bottom: 1%; /* Adjust margin as needed */
+}
+
+#join_instruction {
+    margin-bottom: 10px; /* Adjust margin to move the text further down */
+}
+
+#join_button {
     background-color: #4CAF50;
     text-align: center;
     color: white;
-    padding: 4%;
-    margin: 1%;
-    border: 2px solid black;
-    cursor: pointer;
-    width: 30%;
-}
-#Log_out{
-    background-color: red;
-    text-align: center;
-    color: white;
-    padding: 14px 20px;
+    padding: 10px 15px; /* Adjust padding */
     margin: 8px 0;
-    border: 2px solid black;
-    cursor: pointer;
-    width: 5%;
-}
-#Join{
-    background-color: #4CAF50;
-    text-align: center;
-    color: white;
-    padding: 14px 20px;
-    margin: 8px 0;
-    border: 2px solid black;
+    border: 0px solid white;
     cursor: pointer;
     width: 45%;
 }
-#Leave{
+
+#leave_button {
     background-color: red;
     text-align: center;
     color: white;
-    padding: 14px 20px;
+    padding: 10px 15px; /* Adjust padding */
     margin: 8px 0;
-    border: 2px solid black;
+    border: 0px solid white;
     cursor: pointer;
     width: 45%;
+}
+
+#log_out {
+    background-color: red;
+    text-align: center;
+    color: white;
+    padding: 10px 15px; /* Adjust padding */
+    margin: 8px; /* Keep margin as desired */
 }

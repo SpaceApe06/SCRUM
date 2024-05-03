@@ -2,8 +2,8 @@
 
     $server = "localhost";
     $user = "root";
-    $pw = "ADMIN";
-    $db = "scrumDB";
+    $pw = "";
+    $db = "scrumdb";
 
     $conn = mysqli_connect($server, $user, $pw, $db);
 

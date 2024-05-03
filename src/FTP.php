@@ -2,7 +2,7 @@
 $ftp_server = "172.25.1.103"; //FTP server addressen
 $ftp_user = "ftpuser"; // Spesifiser brukenavnet til FTP server
 $ftp_pass = "IMKuben1337!"; // Spesifiserer password til FTP server
-$file = "/srv/ftp/wolfenstein"; // Spesifiserer filen som skal lastes ned
+$file = "/srv/ftp/wolfenstein/Wolfenstein_ET.zip"; // Spesifiserer filen som skal lastes ned
 // lager connection
 $conn_id = ftp_connect($ftp_server);
 
